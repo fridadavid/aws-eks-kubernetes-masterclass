@@ -20,6 +20,16 @@ eksctl create cluster --name=eksdemo1 \
                       --region=us-east-1 \
                       --zones=us-east-1a,us-east-1b \
                       --without-nodegroup 
+====================================================================
+
+or. Use this when you already have your vpc provisioned
+
+eksctl create cluster --name=ekstest \
+                      --region=us-east-1 \
+                      --vpc-private-subnets subnet-0498bfd65ab6d2616,subnet-0ac86cfe853be1721 \
+                      --vpc-public-subnets subnet-0feb003c607d6d3e7,subnet-02bac4d6a6be2600d \
+                      --without-nodegroup 
+
 
 # Get List of clusters
 eksctl get cluster                  
